@@ -1,0 +1,36 @@
+<!--<h2>{{ customer.name }}'s Orders</h2>-->
+<!-- <table class="table table-striped">
+    <tr>
+        <th>Author</th>
+        <th>Title</th>
+    </tr>
+    <tr ng-repeat="book in books">
+        <td>{{ book.authors[0] }}</td>
+        <td>{{ book.title }} </td>
+    </tr>
+</table> -->
+<div ng-repeat="book in books | orderBy:'-rank'">
+ <div class="glyphicon glyphicon-arrow-up" ng-click="upRank(book)" style="cursor: pointer">
+                            </div>
+                            <div class="badge badge-inverse">
+                                <div>{{book.rank}}</div>
+                            </div>
+                            <div class="glyphicon glyphicon-arrow-down" ng-click="downRank(book)" style="cursor: pointer">
+                            </div>
+	<div class="panel panel-primary">
+		<div class="panel-heading" >{{book.title}}</div>
+		<div class="panel-body">
+		<div>
+			<img alt="1984" width="120" height="180" ng-src="{{book.imgPath}}" style="float:left; padding: 5px;" />
+				<p>Author: <strong>{{ book.authors[0] }}</strong></p>
+				<p>Published: <i>{{ book.published }}</i></p>
+				<p>Pages: <i>{{ book.pages }}</i></p>
+				<br />
+				<p>{{book.description}}</p>
+		</div>
+			<div ng-show="!!user.rank">
+				Rank: {{book.rank}}
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,30 @@
+<!doctype html>
+<html ng-app="libraryApp">
+
+<head>
+    <title>Using Directives</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="styles/style.css" rel="stylesheet" type="text/css" />
+    <link href="styles/animations.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div id="wrapper" class="toggled">
+        <genres-sidebar></genres-sidebar>
+
+        <div class="container" style="padding-top: 10px">
+            <div ng-view class="slide-animation"></div>
+        </div>
+    </div>
+    <!-- angular modules -->
+    <script src="scripts/angular.js"></script>
+    <script src="scripts/angular-route.js"></script>
+    <script src="scripts/angular-animate.js"></script>
+    <!-- main app -->
+    <script src="app/app.js"></script>
+    <script src="app/controllers/GenreController.js"></script>
+    <script src="app/directives/genresSidebar.js"></script>
+    <script src="app/directives/bookPanels.js"></script>
+    <script src="app/services/libraryFactory.js"></script>
+</body>
+</html>
