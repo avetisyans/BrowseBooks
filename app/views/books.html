@@ -1,14 +1,3 @@
-<!--<h2>{{ customer.name }}'s Orders</h2>-->
-<!-- <table class="table table-striped">
-    <tr>
-        <th>Author</th>
-        <th>Title</th>
-    </tr>
-    <tr ng-repeat="book in books">
-        <td>{{ book.authors[0] }}</td>
-        <td>{{ book.title }} </td>
-    </tr>
-</table> -->
 <div ng-repeat="book in books | orderBy:'-rank'">
  <div class="glyphicon glyphicon-arrow-up" ng-click="upRank(book)" style="cursor: pointer">
                             </div>

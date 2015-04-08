@@ -4,7 +4,7 @@
     -o-transition: 0.5s linear all;
     transition: 0.5s linear all;
     position:relative;
-    height: 1000px;
+    height: 2000px;
 }
  
 .slide-animation.ng-enter {
