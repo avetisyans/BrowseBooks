@@ -10,12 +10,26 @@ app.use(bodyParser.json());
 router.get('/books/:genreName', function(req, res) {
     var genreName = req.params.genreName;
     var genreBooks = [];
-    for (var i=0, len = books.length; i < len; ++i) {
+    for (var i = 0, len = books.length; i < len; ++i) {
         if (books[i].genre === genreName) {
             genreBooks.push(books[i]);
         }
     }
     res.json(genreBooks);
+});
+
+router.put('/books/:bookId', function(req, res) {
+    var bookId = req.params.bookId;
+    var book = null;
+    var bookRank = req.body.rank;
+
+    for (var i = 0, len = books.length; i < len; ++i) {
+        if (books[i].id == bookId) {
+            books[i].rank = bookRank;
+            book = books[i];
+        }
+    }
+    res.json(book);
 });
 
 

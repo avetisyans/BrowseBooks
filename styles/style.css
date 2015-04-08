@@ -130,7 +130,7 @@ html { height: 100%;}
 .sidebar-nav li a:focus,
 .sidebar-nav li.open a:hover,
 .sidebar-nav li.open a:active,
-.sidebar-nav li.open a:focus{
+.sidebar-nav li.open a:focus {
     color: #fff;
     text-decoration: none;
     background-color: transparent;
@@ -141,6 +141,7 @@ html { height: 100%;}
     font-size: 20px;
     line-height: 44px;
 }
+
 .sidebar-nav .dropdown-menu {
     position: relative;
     width: 100%;

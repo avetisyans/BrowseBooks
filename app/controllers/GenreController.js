@@ -4,12 +4,25 @@
         var genreName = $routeParams.genreName;
         $scope.books = [];
         $scope.upRank = function(book) {
-            console.log("UpRank is Pressed");
-            book.rank++;
+            libraryFactory.upRank(book)
+                .success(function(theBook) {
+                    book.rank = theBook.rank;
+                })
+                .error(function(data, status, headers, config) {
+                    console.log("UpRank Error");
+                      console.log(data.error + ' ' + status);
+                });
         }
+
         $scope.downRank = function(book) {
-            console.log("downRank is Pressed");
-            book.rank--;
+            libraryFactory.downRank(book)
+                .success(function(theBook) {
+                    book.rank = theBook.rank;
+                })
+                .error(function(data, status, headers, config) {
+                    console.log("DownRank Error");
+                      console.log(data.error + ' ' + status);
+                });
         }
         
         function init() {
