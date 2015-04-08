@@ -19,12 +19,12 @@ router.get('/books/:genreName', function(req, res) {
 });
 
 router.put('/books/:bookId', function(req, res) {
-    var bookId = req.params.bookId;
+    var bookId = parseInt(req.params.bookId);
     var book = null;
     var bookRank = req.body.rank;
 
     for (var i = 0, len = books.length; i < len; ++i) {
-        if (books[i].id == bookId) {
+        if (books[i].id === bookId) {
             books[i].rank = bookRank;
             book = books[i];
         }
