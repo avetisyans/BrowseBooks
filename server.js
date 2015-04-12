@@ -35,7 +35,8 @@ router.put('/books/:bookId', function(req, res) {
 
 app.use('/api', router);
 
-app.listen(8000);
+var port = Number(process.env.PORT || 8000);
+app.listen(port);
 
 console.log('Express is listening on port 8000');
 
